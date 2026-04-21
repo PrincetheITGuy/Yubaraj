@@ -1,35 +1,69 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8">
     <title>Quick Note Taker</title>
     <style>
-      body {
-        font-family: system-ui;
-        padding: 20px;
-        background: #f4f4f4;
-      }
-      textarea {
-        width: 95%;
-        height: 60vh;
-        font-size: 18px;
-        padding: 15px;
-      }
-    button {
-  padding: 12px 30px;
-  font-size: 18px;
-  background: #316357;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-</style>
+        body {
+            font-family: system-ui, sans-serif;
+            padding: 20px;
+            background: #f4f4f4;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        textarea {
+            width: 95%;
+            height: 60vh;
+            font-size: 18px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .button-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            background: #316357;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        button:hover {
+            background: #2980b9;
+        }
+
+        #save-status {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-  <h1>✏️ Quick Note Taker</h1>
-  <textarea id="note" placeholder="Start typing your note..."></textarea>
-  <br><br>
-  <button id="save">💾 Save Note</button>
-  <script src="renderer.js"></script>
+    <h1>Quick Note Taker</h1>
+
+    <textarea id="note" placeholder="Start typing your note..."></textarea>
+
+    <div class="button-row">
+        <button id="new-note">New Note</button>
+        <button id="open-file">Open File</button>
+        <button id="save">💾 Save Note</button>
+        <button id="save-as">📁 Save As</button>
+    </div>
+
+    <p id="save-status"></p>
+
+    <script src="renderer.js"></script>
 </body>
 </html>
